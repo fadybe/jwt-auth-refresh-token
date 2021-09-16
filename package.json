@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Authentication with refresh and access JSON Web Tokens and user roles.",
   "type": "module",
+  "private":true,
   "main": "src/index.js",
   "scripts": {
     "start": "node -r dotenv/config src/index.js",
