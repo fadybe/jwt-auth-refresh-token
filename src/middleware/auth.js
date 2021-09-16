@@ -4,7 +4,7 @@ const { TokenExpiredError } = jwt;
 import Roles from "../constants/roles.js";
 
 const auth = (req, res, next) => {
-  let token = req.headers["x-access-token"];
+  let token = req.headers["x-access-token"]; // or authorization header
   if (!token) return res.status(403).send({ message: "No token provided!" });
 
   try {

@@ -17,7 +17,7 @@ userSchema.methods.createRefreshToken = async function () {
       id: this._id,
     },
     process.env.JWT_REFRESH_TOKEN_SECRET,
-    { expiresIn: process.env.jwtRefreshExpiration }
+    { issuer: "refresh", expiresIn: process.env.jwtRefreshExpiration }
   );
 
   this.refresh_token = refreshToken;
@@ -33,7 +33,7 @@ userSchema.methods.createAccessToken = async function () {
       role: this.role,
     },
     process.env.JWT_ACCESS_TOKEN_SECRET,
-    { expiresIn: process.env.jwtExpiration }
+    { issuer: "access", expiresIn: process.env.jwtExpiration }
   );
 
   return accessToken;
